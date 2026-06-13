@@ -1,0 +1,68 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "api": "https://schema.org/WebAPI",
+    "openapi": "https://schema.org/softwareVersion"
+  },
+  "@type": "WebAPI",
+  "@id": "https://gutendex.com/",
+  "name": "Gutendex API",
+  "description": "Gutendex is a JSON web API for Project Gutenberg ebook metadata. It provides access to the catalog of 75,000+ public domain books with filtering by language, copyright status, topic, author lifespan, and MIME type. The API returns paginated JSON results including book titles, authors, subjects, bookshelves, download formats, and download counts. No authentication or API key is required.",
+  "url": "https://gutendex.com/",
+  "provider": {
+    "@type": "Organization",
+    "name": "Project Gutenberg",
+    "url": "https://www.gutenberg.org/",
+    "sameAs": [
+      "https://twitter.com/gutenberg_org",
+      "https://github.com/gutenbergtools"
+    ]
+  },
+  "documentation": "https://gutendex.com/",
+  "termsOfService": "https://www.gutenberg.org/policy/terms_of_use.html",
+  "license": "https://www.gutenberg.org/policy/permission.html",
+  "keywords": [
+    "books",
+    "ebooks",
+    "public domain",
+    "literature",
+    "library",
+    "metadata",
+    "EPUB",
+    "Kindle",
+    "Project Gutenberg"
+  ],
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://gutendex.com/books",
+    "serviceType": "REST API"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free, no authentication required"
+  },
+  "potentialAction": [
+    {
+      "@type": "SearchAction",
+      "name": "List Books",
+      "description": "Retrieve paginated list of books with optional filters",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://gutendex.com/books{?search,languages,copyright,ids,author_year_start,author_year_end,mime_type,topic,sort}",
+        "httpMethod": "GET"
+      }
+    },
+    {
+      "@type": "ReadAction",
+      "name": "Get Book by ID",
+      "description": "Retrieve a single book by its Project Gutenberg ID",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://gutendex.com/books/{id}",
+        "httpMethod": "GET"
+      }
+    }
+  ]
+}
