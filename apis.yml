@@ -1,0 +1,72 @@
+aid: gutenberg
+name: Project Gutenberg
+description: >-
+  Project Gutenberg is a free ebook library providing access to over 75,000
+  public domain books via the Gutendex REST API. The API enables developers to
+  search and retrieve bibliographic metadata for books and authors, filter by
+  language, copyright status, topic, and MIME type, and access download links
+  for multiple formats including EPUB, Kindle, HTML, and plain text. Project
+  Gutenberg has pioneered free ebooks since 1971 and the Gutendex API makes its
+  catalog programmatically accessible via a simple JSON REST interface with no
+  authentication required.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/gutenberg/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Books
+  - Ebooks
+  - Public Domain
+  - Literature
+  - Library
+  - Metadata
+  - EPUB
+apis:
+  - aid: gutenberg:gutendex
+    name: Gutendex API
+    description: >-
+      Gutendex is a JSON web API for Project Gutenberg ebook metadata. It
+      provides access to the catalog of 75,000+ public domain books with
+      filtering by language, copyright status, topic, author lifespan, and MIME
+      type. The API returns paginated JSON results including book titles,
+      authors, subjects, bookshelves, download formats, and download counts.
+      No authentication or API key is required.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://gutendex.com/
+    baseURL: https://gutendex.com
+    tags:
+      - Books
+      - Ebooks
+      - Public Domain
+      - Metadata
+      - Literature
+    properties:
+      - type: Documentation
+        url: https://gutendex.com/
+      - type: OpenAPI
+        url: https://gutendex.com/books
+common:
+  - type: Website
+    url: https://www.gutenberg.org/
+  - type: Documentation
+    url: https://gutendex.com/
+  - type: GitHubOrg
+    url: https://github.com/gutenbergtools
+  - type: Blog
+    url: https://www.gutenberg.org/help/
+  - type: Pricing
+    url: https://gutendex.com/
+  - type: StatusPage
+    url: https://www.gutenberg.org/
+  - type: X
+    url: https://twitter.com/gutenberg_org
+  - type: Plans
+    url: plans/gutenberg-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/gutenberg-rate-limits.yml
+  - type: FinOps
+    url: finops/gutenberg-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

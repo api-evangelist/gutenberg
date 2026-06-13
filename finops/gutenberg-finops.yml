@@ -1,0 +1,62 @@
+name: Project Gutenberg FinOps
+description: >-
+  Project Gutenberg and the Gutendex API are entirely free with no costs
+  associated with API consumption. There are no metered charges, overage fees,
+  or subscription costs. The primary financial consideration is infrastructure
+  cost if an organization chooses to self-host the Gutendex server for
+  production reliability.
+model: free
+currency: USD
+costs:
+  - name: Gutendex Public API Usage
+    description: >-
+      Using the public Gutendex API at gutendex.com incurs no cost. The service
+      is free and open with no authentication, API keys, or billing.
+    type: usage
+    price: 0.00
+    unit: request
+    notes: >-
+      No metering, no billing, no account required. Suitable for development,
+      prototyping, and light production use.
+
+  - name: Self-Hosted Gutendex Infrastructure
+    description: >-
+      Organizations needing production SLAs should self-host Gutendex. Costs
+      are entirely driven by the chosen cloud or on-premises infrastructure.
+      A minimal Django application with a PostgreSQL database is sufficient.
+    type: infrastructure
+    price: null
+    unit: month
+    notes: >-
+      Gutendex is a lightweight Django app. A small cloud VM (1-2 vCPU, 2GB RAM)
+      with PostgreSQL is sufficient for most workloads. Initial catalog download
+      requires ingesting nightly Project Gutenberg XML/RDF archives.
+      Estimate $5-$20/month on commodity cloud providers for light to moderate
+      traffic.
+
+  - name: Project Gutenberg Content Access
+    description: >-
+      Downloading ebooks and content from Project Gutenberg mirrors is free.
+      No fees are charged for any content as all works are in the public domain
+      in the United States.
+    type: content
+    price: 0.00
+    unit: download
+    notes: >-
+      Bulk downloads should use rsync from official mirrors rather than the
+      main gutenberg.org site. See https://www.gutenberg.org/help/mirroring.html
+
+optimization:
+  - description: >-
+      Cache Gutendex API responses locally to reduce calls to the shared public
+      instance. The catalog does not change more than once per day.
+  - description: >-
+      For bulk catalog work, download the daily XML/RDF feed or weekly CSV
+      directly rather than paginating through the API.
+      URL: https://www.gutenberg.org/cache/epub/feeds/
+  - description: >-
+      Self-host Gutendex for production workloads to eliminate dependency on the
+      volunteer-run public instance and avoid impacting other community users.
+  - description: >-
+      Use the OPDS feed (https://www.gutenberg.org/ebooks/search.opds/) for
+      application integration when Gutendex is not suitable.

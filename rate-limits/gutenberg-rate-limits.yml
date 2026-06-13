@@ -1,0 +1,49 @@
+name: Project Gutenberg Rate Limits
+description: >-
+  The Gutendex API hosted at gutendex.com does not publish explicit rate limits
+  or throttling policies. It is a community-maintained service and users are
+  encouraged to self-host for production workloads. Direct access to the
+  Project Gutenberg website (gutenberg.org) is restricted to human users; robot
+  access requires a minimum 2-second delay between requests per official policy.
+  Bulk downloads should use mirrors or rsync rather than the main website.
+limits:
+  - name: Gutendex API - No Published Rate Limit
+    description: >-
+      The public Gutendex API instance at gutendex.com does not document
+      explicit rate limits. The service is best-effort and volunteer-maintained.
+      For sustained or high-volume usage, self-hosting is strongly recommended.
+    scope: api
+    unit: request
+    limit: null
+    period: null
+    notes: >-
+      No rate limit is enforced or documented. Self-hosting is recommended for
+      production workloads. See https://github.com/garethbjohnson/gutendex for
+      setup instructions.
+
+  - name: Project Gutenberg Website - Robot Access Delay
+    description: >-
+      Per the official Project Gutenberg robot access policy, automated
+      downloads from gutenberg.org using wget must include a 2-second delay
+      between requests. Violations result in temporary or permanent IP blocks.
+    scope: website
+    unit: request
+    limit: 1
+    period: 2 seconds
+    notes: >-
+      Use the harvest endpoint with wget -w 2 flag for file downloads.
+      Endpoint: https://www.gutenberg.org/robot/harvest
+      See: https://www.gutenberg.org/policy/robot_access.html
+
+  - name: Catalog Data - No Limit
+    description: >-
+      Machine-readable catalog data (XML/RDF, CSV, MARC records) is freely
+      downloadable in bulk. Daily XML/RDF feeds and weekly CSV and MARC files
+      are published without access restrictions.
+    scope: catalog
+    unit: download
+    limit: null
+    period: null
+    notes: >-
+      Catalog files available at https://www.gutenberg.org/ebooks/offline_catalogs.html
+      OPDS feed available at https://www.gutenberg.org/ebooks/search.opds/

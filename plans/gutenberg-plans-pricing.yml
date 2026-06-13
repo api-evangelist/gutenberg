@@ -1,0 +1,44 @@
+name: Project Gutenberg Plans and Pricing
+description: >-
+  Project Gutenberg and the Gutendex API are entirely free and open. There are
+  no pricing tiers, subscription plans, or commercial offerings. The Gutendex
+  API is a volunteer-maintained open-source project released under the MIT
+  license. Direct access to Project Gutenberg content is also free with no
+  registration required. For production workloads, self-hosting the Gutendex
+  server using the open-source code is recommended.
+plans:
+  - name: Free
+    description: >-
+      Full access to the Gutendex API with no authentication, no API keys, and
+      no usage fees. Provides access to metadata for 75,000+ public domain books
+      including titles, authors, subjects, bookshelves, download links, and
+      download counts.
+    url: https://gutendex.com/
+    price: 0.00
+    currency: USD
+    unit: month
+    features:
+      - Unlimited API calls (best-effort, self-service)
+      - Access to 75,000+ book metadata records
+      - Filtering by language, copyright, topic, author years, MIME type
+      - Paginated JSON responses (up to 32 results per page)
+      - Individual book lookup by Project Gutenberg ID
+      - Download links for EPUB, Kindle, HTML, plain text formats
+      - No authentication required
+      - No API key required
+  - name: Self-Hosted
+    description: >-
+      Operators can deploy their own Gutendex instance using the open-source
+      MIT-licensed Django application. This provides full control over
+      availability, performance, and data freshness. Project Gutenberg publishes
+      nightly XML/RDF catalog archives that Gutendex downloads and indexes.
+    url: https://github.com/garethbjohnson/gutendex
+    price: 0.00
+    currency: USD
+    unit: month
+    features:
+      - Full open-source MIT-licensed codebase
+      - Self-managed infrastructure
+      - Nightly catalog updates from Project Gutenberg archives
+      - Configurable database and server settings
+      - No dependency on gutendex.com uptime
