@@ -47,6 +47,8 @@ apis:
       - type: OpenAPI
         url: https://gutendex.com/books
 common:
+  - type: DomainSecurity
+    url: security/gutenberg-domain-security.yml
   - type: Website
     url: https://www.gutenberg.org/
   - type: Documentation
