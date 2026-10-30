@@ -64,49 +64,105 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Project Gutenberg is a free ebook library providing access to over 75,000 public domain books. Founded in 1971, it is the oldest digital library and offers ebooks primarily for works whose U.S. copyright has expired. The Gutendex API provides a JSON REST interface for searching and accessing Project Gutenberg's catalog of bibliographic metadata.
+Project Gutenberg is a free ebook library providing access to over 75,000 public domain books via the Gutendex REST API. The API enables developers to search and retrieve bibliographic metadata for books and authors, filter by language, copyright status, topic, and MIME type, and access download links for multiple formats including EPUB, Kindle, HTML, and plain text. Project Gutenberg has pioneered free ebooks since 1971 and the Gutendex API makes its catalog programmatically accessible via a simple JSON REST interface with no authentication required.
 
-## API
+**Areas:** Books · Ebooks · Public Domain · Literature · Library · Metadata · EPUB
 
-The primary programmatic interface is the [Gutendex API](https://gutendex.com/), a community-maintained JSON web API that indexes Project Gutenberg catalog data updated nightly from official XML/RDF archives.
+## Project Gutenberg on APIs.io
 
-**Base URL:** `https://gutendex.com`
+Everything profiled for Project Gutenberg is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/gutenberg/](https://apis.io/providers/gutenberg/)** — or go straight to one of the APIs or properties below.
 
-**Key Endpoint:** `GET /books` — returns paginated book metadata
+### APIs (1)
 
-**No authentication required.**
+- [Gutendex API](https://apis.io/apis/gutenberg/gutendex/) — Gutendex is a JSON web API for Project Gutenberg ebook metadata. It provides access to the catalog of 75,000+ public domain books with filtering by…
 
-### Query Parameters
+### Published properties
 
-| Parameter | Description |
-|---|---|
-| `search` | Search author names and book titles |
-| `languages` | Comma-separated ISO two-character language codes (e.g., `en,fr`) |
-| `ids` | Comma-separated Project Gutenberg ID numbers |
-| `copyright` | Filter by copyright status: `true`, `false`, or `null` |
-| `topic` | Search bookshelves and subjects |
-| `author_year_start` | Filter by author birth year (supports BCE with negative values) |
-| `author_year_end` | Filter by author death year |
-| `mime_type` | Filter by file MIME type prefix |
-| `sort` | Sort order: `popular` (default), `ascending`, `descending` |
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Individual Book
+#### Security (1)
 
-`GET /books/{id}` — retrieve a specific book by Project Gutenberg ID number.
+Authentication, trust centre, and vulnerability disclosure.
 
-## Data Access Alternatives
+- [Gutenberg Domain Security](https://apis.io/security/gutenberg/gutenberg-domain-security/)
 
-- **OPDS Feed:** `https://www.gutenberg.org/ebooks/search.opds/`
-- **Daily XML/RDF Catalog:** `https://www.gutenberg.org/cache/epub/feeds/`
-- **Weekly CSV Catalog:** Available at the offline catalogs page
-- **RSS Feed:** `https://www.gutenberg.org/cache/epub/feeds/today.rss`
+#### Plans and pricing (1)
 
-## Links
+Published plans, tiers and prices.
+
+- [Gutenberg Plans Pricing](https://apis.io/plans/gutenberg/gutenberg-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Gutenberg Rate Limits](https://apis.io/rate-limits/gutenberg/gutenberg-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Gutenberg Finops](https://apis.io/finops/gutenberg/gutenberg-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.gutenberg.org/)
-- [Gutendex API](https://gutendex.com/)
-- [Gutendex GitHub](https://github.com/garethbjohnson/gutendex)
-- [GitHub Organization](https://github.com/gutenbergtools)
-- [Offline Catalogs](https://www.gutenberg.org/ebooks/offline_catalogs.html)
-- [Robot Access Policy](https://www.gutenberg.org/policy/robot_access.html)
-- [Mirroring Guide](https://www.gutenberg.org/help/mirroring.html)
+- [Documentation](https://gutendex.com/)
+- [Pricing](https://gutendex.com/)
+- [Blog](https://www.gutenberg.org/help/)
+- [Status](https://www.gutenberg.org/)
+
+## API Evangelist rating
+
+**Kin Score 20.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 24.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 15.8 |
+
+**Agent readiness 13.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/gutenberg/](https://apis.io/providers/gutenberg/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Project Gutenberg: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/gutenberg/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
